@@ -1,27 +1,46 @@
-# Import
+# Imports
 from PyQt5.QtWidgets import *
-from PyQt5.QtSql import *
-from os.path import exists
+from PyQt5.QtCore import *
 import sys
-# Initialize PyQt
-app = QApplication([])
+import core
 
 
-# Import database
-if not exists("data.sql"):
-    print("File data.sql does not exist. Please run initdb.py.")
-    sys.exit()
+# Init values
+datafile = 'data.json'
 
-db = QSqlDatabase.addDatabase("QSQLITE")
-db.setDatabaseName("data.sql")
-db.open()
+app = QApplication.instance() 
+if not app:
+    app = QApplication(sys.argv)
 
-model = QSqlTableModel(None, db)
-model.setTable("Pizzas")
-model.select()
+fen = QWidget()
+
+# on donne un titre à la fenêtre
+fen.setWindowTitle("Mia Pizza")
+
+# on fixe la taille de la fenêtre
+fen.resize(1280,720)
+
+data = core.load()
+headers = ["Ingredients", "Quantités"]
+ingredients = list(data['Ingredients'].items())
+
+class TableModel(QAbstractTableModel):
+    def rowCount(self, parent):
+        return len(ingredients)
+    def columnCount(self, parent):
+        return len(headers)
+    def data(self, index, role):
+        if role != Qt.DisplayRole:
+            return QVariant()
+        return ingredients[index.row()][index.column()]
+    def headerData(self, section, orientation, role):
+        if role != Qt.DisplayRole or orientation != Qt.Horizontal:
+            return QVariant()
+        return headers[section]
+
+model = TableModel()
 view = QTableView()
 view.setModel(model)
-view.show()
-
-# Start application
+fen.setCentralWidget(view)
+fen.show()
 app.exec_()
