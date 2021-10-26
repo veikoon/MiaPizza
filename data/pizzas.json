@@ -1,0 +1,11 @@
+{
+    "Pizza": [
+        "Reine"
+    ],
+    "Ingredient": {
+        "Tomate": -90,
+        "Jambon": -360
+    },
+    "Reine": {"Tomate":10,"Jambon":40}
+    }
+}

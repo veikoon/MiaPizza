@@ -1,0 +1,17 @@
+2021-10-26 13:01:56 Cheddar : 40 donc total de 0
+2021-10-26 13:01:58 Cornichon : 25 donc total de 0
+2021-10-26 13:02:02 Mozzarella : 60 donc total de 0
+2021-10-26 13:02:05 Oignon : 20 donc total de 0
+2021-10-26 13:02:08 Olive : 3 donc total de 0
+2021-10-26 13:02:13 Sauce Burger : 25 donc total de 0
+2021-10-26 13:02:16 Viande Hache : 70 donc total de 0
+2021-10-26 14:25:02 Mozzarella :  donc total de -105
+2021-10-26 14:25:03 Miel :  donc total de -20
+2021-10-26 14:25:03 Chèvre :  donc total de 0
+2021-10-26 14:25:03 Olive :  donc total de -3
+2021-10-26 14:25:03 Origan :  donc total de 0
+2021-10-26 14:25:52 Mozzarella :  donc total de -210
+2021-10-26 14:25:52 Miel :  donc total de -40
+2021-10-26 14:25:52 Chèvre :  donc total de 0
+2021-10-26 14:25:52 Olive :  donc total de -6
+2021-10-26 14:25:52 Origan :  donc total de 0
