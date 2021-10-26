@@ -53,82 +53,77 @@ def check_int(s):
         return s[1:].isdigit()
     return s.isdigit()
 
-def change(object, number, sign):
-    if number == '': # If the string is empty, put 1 into the string
-        number = '1'
-    if check_int(number): # Check if the string is an int
-        object.quentity += abs(int(number)) * sign
-        object.last_update = timezone.now()
-        object.save()
-        f= open("data/logs.txt","a")
-        f.write(str(object.last_update.strftime("%Y-%m-%d %H:%M:%S"))
+def change(ingredient, number, sign):
+    ingredient.quentity += abs(int(number)) * sign
+    ingredient.last_update = timezone.now()
+    ingredient.save()
+    log(ingredient, number, sign)
+    
+
+def log(ingredient, number, sign):
+    f= open("data/logs.txt","a")
+    f.write(str(ingredient.last_update.strftime("%Y-%m-%d %H:%M:%S"))
+        + " "
+        + str(ingredient.name)
+        + " : " 
+        + str(number * sign)
+        + " donc total de "
+        + str(ingredient.quentity)
+        + "\n")
+    f.close()
+
+def historique(object, number, sign):
+    signe = ''
+    if int(number) * sign <0:
+        style_alert = "warning"
+    else:
+        style_alert = "success"
+        signe = '+'
+    History.objects.get_or_create( #get if user uses back button
+        message = (
+            "Stock actualisé de "
+            + signe
+            + str(int(number) * sign)
             + " "
             + str(object.name)
-            + " : " 
-            + str(number * sign)
-            + " donc total de "
-            + str(object.quentity)
-            + "\n")
-        f.close()
-        if int(number) * sign <0:
-            style_alert = "warning"
-        else:
-            style_alert = "success"
-        History.objects.get_or_create( #get if user uses back button
-            message = (
-                str(number * sign)
-                + " pour l'ingredient "
-                + str(object.name)
-                + str(object.last_update.strftime(" à %H:%M:%S."))
-            ),
-            style = style_alert
-        )
-    else: # Ask to give an int
-        History.objects.get_or_create( #get if user uses back button
-            message = "Merci de rentrer un nombre valide", style = "danger"
-        )
+            + str(object.last_update.strftime(" à %H:%M:%S."))
+        ),
+        style = style_alert
+    )
 
+def changeIngredient(request, sign):
+    ingredient = get_object_or_404(Ingredient, pk=request.POST['id']) 
+    number = request.POST['num']
+    if number == '':
+        number = '1'
+    change(ingredient, number, sign)
+    historique(ingredient, number, sign)
+    
     
 def remove(request):
-    ingredients = get_object_or_404(Ingredient, pk=request.POST['id']) 
-    number = request.POST['num']
-    change(ingredients, number, -1)
-    return HttpResponseRedirect(reverse('miapizza:base'))
+    changeIngredient(request, -1)
+    return HttpResponseRedirect(reverse('miapizza:ingredients'))
 
 def add(request):
-    ingredients = get_object_or_404(Ingredient, pk=request.POST['id']) 
+    changeIngredient(request, 1)
+    return HttpResponseRedirect(reverse('miapizza:ingredients'))
+
+def changePizza(request, sign):
+    pizza = get_object_or_404(Pizza, pk=request.POST['id'])
     number = request.POST['num']
-    change(ingredients, number, 1)
-    return HttpResponseRedirect(reverse('miapizza:base'))
+    ingredients = pizza.get_ingredients()
+    if number == '':
+        number = '1'
+    for ingredient in list(ingredients):
+        object = get_object_or_404(Ingredient, name=ingredient)
+        change(object, str(ingredients[ingredient] * int(number)), sign)
+    historique(pizza, number, sign)
+    
 
 def removePizza(request):
-    pizza = get_object_or_404(Pizza, pk=request.POST['id'])
-    number = request.POST['num']
-    ingredients = pizza.get_ingredients()
-    if number == '':
-        number = '1'
-    if not check_int(number):
-        History.objects.get_or_create( #get if user uses back button
-            message = "Merci de rentrer un nombre valide", style = "danger"
-        )
-    else:
-        for ingredient in list(ingredients):
-            object = get_object_or_404(Ingredient, name=ingredient)
-            change(object, str(ingredients[ingredient] * int(number)), -1)
-    return HttpResponseRedirect(reverse('miapizza:base'))
+    changePizza(request, -1)
+    return HttpResponseRedirect(reverse('miapizza:pizzas'))
 
 def addPizza(request):
-    pizza = get_object_or_404(Pizza, pk=request.POST['id'])
-    number = request.POST['num']
-    ingredients = pizza.get_ingredients()
-    if number == '':
-        number = '1'
-    if not check_int(number):
-        History.objects.get_or_create( #get if user uses back button
-            message = "Merci de rentrer un nombre valide", style = "danger"
-        )
-    else:
-        for ingredient in list(ingredients):
-            object = get_object_or_404(Ingredient, name=ingredient)
-            change(object, str(ingredients[ingredient] * int(number)), 1)
-    return HttpResponseRedirect(reverse('miapizza:base'))
+    changePizza(request, 1)
+    return HttpResponseRedirect(reverse('miapizza:pizzas'))

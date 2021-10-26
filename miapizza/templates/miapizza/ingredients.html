@@ -18,7 +18,7 @@
     <thead>
         <tr>
             <th class="text-center">Ingrédient</th>
-            <th class="text-center">Quantitié</th>
+            <th class="text-center">Quantité</th>
             <th class="text-center">Ajout/Retrait</th>
         </tr>
     </thead>
@@ -31,13 +31,13 @@
             <td class="text-center">
                 {{ ingredient.quentity }}
             </td>
-            <td class="d-flex justify-content-center">
-                <form class="input-group-append text-center" action="{% url 'miapizza:remove' %}" method="post" autocomplete="off">
+            <td class="d-flex justify-content-center">  
+                <form class="input-group-append text-center" action="{% url 'miapizza:add' %}" method="post" autocomplete="off">
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{ ingredient.id }}"><br>
                     <input type="number" name="num">
-                    <input type="submit" value="Remove" class="btn btn-danger">
-                    <input type="submit" value="Add" class="btn btn-outline-success" formaction="{% url 'miapizza:add' %}" method="post">
+                    <input type="submit" value="Add" class="btn btn-success ml-2">
+                    <input type="submit" value="Remove" class="btn btn-outline-danger ml-2" formaction="{% url 'miapizza:remove' %}" method="post">
                 </form>
             </td>
         </tr>

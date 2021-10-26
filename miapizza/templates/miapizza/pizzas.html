@@ -32,8 +32,8 @@
                     {% csrf_token %}
                     <input type="hidden" name="id" value="{{ pizza.id }}"><br>
                     <input type="number" name="num" min="-100" max="100">
-                    <input type="submit" value="Remove" class="btn btn-danger">
-                    <input type="submit" value="Add" class="btn btn-outline-success" formaction="{% url 'miapizza:addPizza' %}" method="post">
+                    <input type="submit" value="Remove" class="btn btn-danger ml-2">
+                    <input type="submit" value="Add" class="btn btn-outline-success ml-2" formaction="{% url 'miapizza:addPizza' %}" method="post">
                 </form>
             </td>
         </tr>

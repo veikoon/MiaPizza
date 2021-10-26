@@ -15,3 +15,192 @@
 2021-10-26 14:25:52 Chèvre :  donc total de 0
 2021-10-26 14:25:52 Olive :  donc total de -6
 2021-10-26 14:25:52 Origan :  donc total de 0
+2021-10-26 16:01:32 Chorizo :  donc total de -26
+2021-10-26 16:01:32 Merguez :  donc total de -34
+2021-10-26 16:01:32 Poivron :  donc total de -30
+2021-10-26 16:01:32 Mozzarella :  donc total de -310
+2021-10-26 16:01:32 Olive :  donc total de -9
+2021-10-26 16:01:32 Origan :  donc total de 0
+2021-10-26 16:03:56 Mozzarella :  donc total de -415
+2021-10-26 16:03:56 Miel :  donc total de -60
+2021-10-26 16:03:56 Chèvre :  donc total de 0
+2021-10-26 16:03:56 Olive :  donc total de -12
+2021-10-26 16:03:56 Origan :  donc total de 0
+2021-10-26 16:04:30 Mozzarella :  donc total de -520
+2021-10-26 16:04:30 Miel :  donc total de -80
+2021-10-26 16:04:30 Chèvre :  donc total de 0
+2021-10-26 16:04:30 Olive :  donc total de -15
+2021-10-26 16:04:30 Origan :  donc total de 0
+2021-10-26 16:05:09 Chèvre :  donc total de -10
+2021-10-26 16:06:16 Cheddar :  donc total de -20
+2021-10-26 16:07:27 Brie :  donc total de -20
+2021-10-26 16:21:38 Brie :  donc total de -21
+2021-10-26 16:23:32 Cornichon :  donc total de -1
+2021-10-26 16:30:11 Brie :  donc total de -22
+2021-10-26 16:30:17 Brie : 20 donc total de -2
+2021-10-26 16:30:22 Mozzarella :  donc total de -625
+2021-10-26 16:30:22 Miel :  donc total de -100
+2021-10-26 16:30:22 Chèvre :  donc total de -10
+2021-10-26 16:30:22 Olive :  donc total de -18
+2021-10-26 16:30:22 Origan :  donc total de 0
+2021-10-26 16:30:30 Mozzarella : 105 donc total de -520
+2021-10-26 16:30:30 Miel : 20 donc total de -80
+2021-10-26 16:30:30 Chèvre : 0 donc total de -10
+2021-10-26 16:30:30 Olive : 3 donc total de -15
+2021-10-26 16:30:30 Origan : 0 donc total de 0
+2021-10-26 16:30:34 Mozzarella :  donc total de -625
+2021-10-26 16:30:34 Miel :  donc total de -100
+2021-10-26 16:31:26 Mozzarella :  donc total de -730
+2021-10-26 16:31:26 Miel :  donc total de -120
+2021-10-26 16:31:27 Chèvre :  donc total de -10
+2021-10-26 16:31:27 Olive :  donc total de -18
+2021-10-26 16:31:27 Origan :  donc total de 0
+2021-10-26 16:32:00 Poivron : 30 donc total de 0
+2021-10-26 16:32:02 Brie : 2 donc total de 0
+2021-10-26 16:32:04 Cheddar : 20 donc total de 0
+2021-10-26 16:32:07 Chorizo : 26 donc total de 0
+2021-10-26 16:32:09 Chèvre : 10 donc total de 0
+2021-10-26 16:32:10 Cornichon : 1 donc total de 0
+2021-10-26 16:32:12 Merguez : 34 donc total de 0
+2021-10-26 16:32:15 Miel : 120 donc total de 0
+2021-10-26 16:32:19 Mozzarella : 730 donc total de 0
+2021-10-26 16:32:22 Olive : 18 donc total de 0
+2021-10-26 16:39:35 Cheddar : 5 donc total de 5
+2021-10-26 16:40:28 Mozzarella : 525 donc total de 525
+2021-10-26 16:40:28 Miel : 100 donc total de 100
+2021-10-26 16:40:28 Chèvre : 0 donc total de 0
+2021-10-26 16:40:28 Olive : 15 donc total de 15
+2021-10-26 16:40:28 Origan : 0 donc total de 0
+2021-10-26 16:40:39 Olive :  donc total de 0
+2021-10-26 16:40:45 Mozzarella :  donc total de 0
+2021-10-26 16:40:48 Miel :  donc total de 0
+2021-10-26 16:40:54 Cheddar :  donc total de 0
+2021-10-26 16:40:59 Oignon : 100 donc total de 100
+2021-10-26 16:40:59 Viande Hache : 350 donc total de 350
+2021-10-26 16:40:59 Sauce Burger : 125 donc total de 125
+2021-10-26 16:40:59 Cornichon : 125 donc total de 125
+2021-10-26 16:40:59 Cheddar : 200 donc total de 200
+2021-10-26 16:40:59 Mozzarella : 300 donc total de 300
+2021-10-26 16:41:10 Oignon :  donc total de 0
+2021-10-26 16:41:10 Viande Hache :  donc total de 0
+2021-10-26 16:41:10 Sauce Burger :  donc total de 0
+2021-10-26 16:41:10 Cornichon :  donc total de 0
+2021-10-26 16:41:10 Cheddar :  donc total de 0
+2021-10-26 16:41:10 Mozzarella :  donc total de 0
+2021-10-26 16:42:37 Epice :  donc total de 0
+2021-10-26 16:42:37 Viande Kebab :  donc total de -350
+2021-10-26 16:42:37 Sauce Kebab :  donc total de -50
+2021-10-26 16:42:37 Mozzarella :  donc total de -500
+2021-10-26 16:42:37 Tomate Cerise :  donc total de -20
+2021-10-26 16:42:37 Olive :  donc total de -15
+2021-10-26 16:42:37 Origan :  donc total de 0
+2021-10-26 16:42:44 Viande Kebab : 350 donc total de 0
+2021-10-26 16:42:47 Mozzarella : 500 donc total de 0
+2021-10-26 16:42:49 Olive : 15 donc total de 0
+2021-10-26 16:42:52 Sauce Kebab : 50 donc total de 0
+2021-10-26 16:42:54 Tomate Cerise : 20 donc total de 0
+2021-10-26 16:43:07 Mozzarella : 210 donc total de 210
+2021-10-26 16:43:07 Miel : 40 donc total de 40
+2021-10-26 16:43:07 Chèvre : 0 donc total de 0
+2021-10-26 16:43:07 Olive : 6 donc total de 6
+2021-10-26 16:43:07 Origan : 0 donc total de 0
+2021-10-26 16:43:18 Miel :  donc total de 0
+2021-10-26 16:43:20 Mozzarella :  donc total de 0
+2021-10-26 16:43:23 Olive :  donc total de 0
+2021-10-26 16:43:28 Oignon : 40 donc total de 40
+2021-10-26 16:43:28 Viande Hache : 140 donc total de 140
+2021-10-26 16:43:28 Sauce Burger : 50 donc total de 50
+2021-10-26 16:43:28 Cornichon : 50 donc total de 50
+2021-10-26 16:43:28 Cheddar : 80 donc total de 80
+2021-10-26 16:43:28 Mozzarella : 120 donc total de 120
+2021-10-26 16:43:28 Tomate Cerise : 6 donc total de 6
+2021-10-26 16:43:28 Olive : 6 donc total de 6
+2021-10-26 16:43:28 Origan : 0 donc total de 0
+2021-10-26 16:43:34 Viande Hache :  donc total de 0
+2021-10-26 16:43:37 Cheddar :  donc total de 0
+2021-10-26 16:43:38 Cornichon :  donc total de 0
+2021-10-26 16:43:41 Mozzarella :  donc total de 0
+2021-10-26 16:43:43 Oignon :  donc total de 0
+2021-10-26 16:43:45 Olive :  donc total de 0
+2021-10-26 16:43:47 Sauce Burger :  donc total de 0
+2021-10-26 16:43:49 Tomate Cerise :  donc total de 0
+2021-10-26 16:43:55 Mozzarella : 210 donc total de 210
+2021-10-26 16:43:55 Miel : 40 donc total de 40
+2021-10-26 16:43:55 Chèvre : 0 donc total de 0
+2021-10-26 16:43:55 Olive : 6 donc total de 6
+2021-10-26 16:43:55 Origan : 0 donc total de 0
+2021-10-26 16:44:07 Mozzarella :  donc total de 0
+2021-10-26 16:44:07 Miel :  donc total de 0
+2021-10-26 16:44:07 Chèvre :  donc total de 0
+2021-10-26 16:44:07 Olive :  donc total de 0
+2021-10-26 16:44:07 Origan :  donc total de 0
+2021-10-26 16:44:15 Epice : 0 donc total de 0
+2021-10-26 16:44:15 Viande Kebab : 140 donc total de 140
+2021-10-26 16:44:15 Sauce Kebab : 20 donc total de 20
+2021-10-26 16:44:15 Mozzarella : 200 donc total de 200
+2021-10-26 16:44:15 Tomate Cerise : 8 donc total de 8
+2021-10-26 16:44:15 Olive : 6 donc total de 6
+2021-10-26 16:44:15 Origan : 0 donc total de 0
+2021-10-26 16:44:30 Epice :  donc total de 0
+2021-10-26 16:44:30 Viande Kebab :  donc total de 0
+2021-10-26 16:44:30 Sauce Kebab :  donc total de 0
+2021-10-26 16:44:30 Mozzarella :  donc total de 0
+2021-10-26 16:44:30 Tomate Cerise :  donc total de 0
+2021-10-26 16:44:30 Olive :  donc total de 0
+2021-10-26 16:44:30 Origan :  donc total de 0
+2021-10-26 16:44:46 Mozzarella : 200 donc total de 200
+2021-10-26 16:44:46 Oignon : 40 donc total de 40
+2021-10-26 16:44:46 Lardon : 100 donc total de 100
+2021-10-26 16:45:06 Mozzarella :  donc total de 0
+2021-10-26 16:45:06 Oignon :  donc total de 0
+2021-10-26 16:45:06 Lardon :  donc total de 0
+2021-10-26 16:45:11 Jambon : 140 donc total de 140
+2021-10-26 16:45:11 Emmental : 90 donc total de 90
+2021-10-26 16:45:11 Mozzarella : 140 donc total de 140
+2021-10-26 16:45:11 Olive : 6 donc total de 6
+2021-10-26 16:45:11 Origan : 0 donc total de 0
+2021-10-26 16:45:19 Jambon :  donc total de 0
+2021-10-26 16:45:19 Emmental :  donc total de 0
+2021-10-26 16:45:19 Mozzarella :  donc total de 0
+2021-10-26 16:45:19 Olive :  donc total de 0
+2021-10-26 16:45:19 Origan :  donc total de 0
+2021-10-26 16:45:21 Oignon : 40 donc total de 40
+2021-10-26 16:45:21 Lardon : 100 donc total de 100
+2021-10-26 16:45:21 Mozzarella : 200 donc total de 200
+2021-10-26 16:45:21 Reblochon : 80 donc total de 80
+2021-10-26 16:45:21 Potetoes : 10 donc total de 10
+2021-10-26 16:45:21 Olive : 6 donc total de 6
+2021-10-26 16:45:21 Origan : 0 donc total de 0
+2021-10-26 16:45:25 Oignon : 40 donc total de 80
+2021-10-26 16:45:25 Lardon : 100 donc total de 200
+2021-10-26 16:45:25 Mozzarella : 200 donc total de 400
+2021-10-26 16:45:25 Reblochon : 80 donc total de 160
+2021-10-26 16:45:25 Potetoes : 10 donc total de 20
+2021-10-26 16:45:25 Olive : 6 donc total de 12
+2021-10-26 16:45:25 Origan : 0 donc total de 0
+2021-10-26 16:45:27 Oignon :  donc total de 0
+2021-10-26 16:45:27 Lardon :  donc total de 0
+2021-10-26 16:45:27 Mozzarella :  donc total de 0
+2021-10-26 16:45:27 Reblochon :  donc total de 0
+2021-10-26 16:45:27 Potetoes :  donc total de 0
+2021-10-26 16:45:27 Olive :  donc total de 0
+2021-10-26 16:45:27 Origan :  donc total de 0
+2021-10-26 16:48:03 Chèvre : 500 donc total de 500
+2021-10-26 16:48:07 Chèvre :  donc total de 0
+2021-10-26 16:48:14 Mozzarella :  donc total de -525
+2021-10-26 16:48:14 Miel :  donc total de -100
+2021-10-26 16:48:14 Chèvre :  donc total de 0
+2021-10-26 16:48:14 Olive :  donc total de -15
+2021-10-26 16:48:14 Origan :  donc total de 0
+2021-10-26 16:49:00 Mozzarella : 525 donc total de 0
+2021-10-26 16:49:00 Miel : 100 donc total de 0
+2021-10-26 16:49:00 Chèvre : 0 donc total de 0
+2021-10-26 16:49:00 Olive : 15 donc total de 0
+2021-10-26 16:49:00 Origan : 0 donc total de 0
+2021-10-26 16:49:07 Mozzarella :  donc total de -210
+2021-10-26 16:49:07 Miel :  donc total de -40
+2021-10-26 16:49:07 Chèvre :  donc total de 0
+2021-10-26 16:49:07 Olive :  donc total de -6
+2021-10-26 16:49:07 Origan :  donc total de 0
+2021-10-26 16:57:42 Miel : 40 donc total de 0
+2021-10-26 16:57:45 Mozzarella : 210 donc total de 0
