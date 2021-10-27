@@ -7,9 +7,14 @@ from django.utils import timezone
 
 
 class Ingredient(models.Model):
+    class Unites(models.TextChoices):
+        gramme = 'gramme(s)'
+        unite = 'unité(s)'
+        boite = 'boîte(s)'
     name = models.CharField(max_length=200)
     last_update = models.DateTimeField('Dernier mouvement')
     quentity = models.IntegerField(default=0)
+    unit = models.CharField(max_length=10,choices=Unites.choices,default=Unites.gramme)
     def __str__(self):
         return self.name
         

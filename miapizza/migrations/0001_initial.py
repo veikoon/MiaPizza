@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=200)),
                 ('last_update', models.DateTimeField(verbose_name='Dernier mouvement sur les ingredients')),
                 ('quentity', models.IntegerField(default=0)),
+                ('unit', models.CharField(max_length=10)),
             ],
         ),
         migrations.CreateModel(

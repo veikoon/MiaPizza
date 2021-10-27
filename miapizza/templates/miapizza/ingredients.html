@@ -19,6 +19,7 @@
         <tr>
             <th class="text-center">Ingrédient</th>
             <th class="text-center">Quantité</th>
+            <th class="text-center">Unité</th>
             <th class="text-center">Ajout/Retrait</th>
         </tr>
     </thead>
@@ -30,6 +31,9 @@
             </td>
             <td class="text-center">
                 {{ ingredient.quentity }}
+            </td>
+            <td class="text-center">
+                {{ ingredient.unit }}
             </td>
             <td class="d-flex justify-content-center">  
                 <form class="input-group-append text-center" action="{% url 'miapizza:add' %}" method="post" autocomplete="off">

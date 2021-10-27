@@ -48,11 +48,6 @@ class PizzaView(generic.ListView):
             History.objects.last().delete()
         return context
 
-def check_int(s):
-    if s[0] in ('-', '+'):
-        return s[1:].isdigit()
-    return s.isdigit()
-
 def change(ingredient, number, sign):
     ingredient.quentity += abs(int(number)) * sign
     ingredient.last_update = timezone.now()
@@ -90,10 +85,16 @@ def historique(object, number, sign):
         ),
         style = style_alert
     )
-
+    
 def changeIngredient(request, sign):
     ingredient = get_object_or_404(Ingredient, pk=request.POST['id']) 
     number = request.POST['num']
+    if ingredient.unit == Ingredient.Unites.gramme and sign == 1 and int(number) < 500:
+        History.objects.get_or_create( #get if user uses back button
+            message = "Impossible d'ajouter une valeur inférieur à 500 !",
+            style = "danger"
+        )
+        return
     if number == '':
         number = '1'
     change(ingredient, number, sign)
