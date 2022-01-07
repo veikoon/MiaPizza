@@ -1,9 +1,11 @@
-from django.http import HttpResponseRedirect
+from django.db.models.fields import CommaSeparatedIntegerField
+from django.http import HttpResponseRedirect,HttpResponseNotFound,HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from datetime import datetime
+import difflib
 
 
 from .ingredients import Ingredient, Pizza
@@ -87,7 +89,7 @@ def historique(object, number, sign):
     )
     
 def changeIngredient(request, sign):
-    ingredient = get_object_or_404(Ingredient, pk=request.POST['id']) 
+    ingredient = get_object_or_404(Ingredient, pk=request.POST['id'])
     number = request.POST['num']
     if ingredient.unit == Ingredient.Unites.gramme and sign == 1 and int(number) < 500:
         History.objects.get_or_create( #get if user uses back button
@@ -116,7 +118,20 @@ def changePizza(request, sign):
     if number == '':
         number = '1'
     for ingredient in list(ingredients):
-        object = get_object_or_404(Ingredient, name=ingredient)
+        #object = get_object_or_404(Ingredient, name=ingredient)
+        try:
+            object = Ingredient.objects.get(name=ingredient) 
+        except:
+            ingredients_list = [ingre.name for ingre in Ingredient.objects.all()]
+            most_accurate = difflib.get_close_matches(ingredient, ingredients_list, 1)
+            error_message = "Error ingrédient \"" + ingredient + "\" introuvable !"
+            if len(most_accurate) >= 1:
+                error_message += " Vouliez vous écrire : \"" + most_accurate[0] + "\" ?"
+            History.objects.get_or_create( #get if user uses back button
+                message = error_message,
+                style = "danger"
+            )
+            return
         change(object, str(ingredients[ingredient] * int(number)), sign)
     historique(pizza, number, sign)
     
