@@ -1,54 +1,71 @@
-from django.db.models.fields import CommaSeparatedIntegerField
-from django.http import HttpResponseRedirect,HttpResponseNotFound,HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
-from django.views import generic
 from django.utils import timezone
-from datetime import datetime
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
 import difflib
 
+from .models import Ingredient, Pizza, History
+from . import forms
 
-from .ingredients import Ingredient, Pizza
-from .ingredients import History
-
-class IndexView(generic.TemplateView):
+@login_required
+def IndexView(request):
     template_name = 'miapizza/base.html'
-    
-class IngredientView(generic.ListView):
-    model = Ingredient
-    template_name = 'miapizza/ingredients.html'
-    context_object_name = 'ingredients_list'
-    def get_queryset(self):
-        return Ingredient.objects.order_by('name')[:]
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        if History.objects.exists():
-            context['last_history'] = {
-            'message' : History.objects.last().message,
-            'style' : History.objects.last().style,
-            }
-            History.objects.last().delete()
-        return context
+    return render(request, template_name)
 
-class PizzaView(generic.ListView):
-    model = Pizza
+def LoginView(request):
+    template_name = 'miapizza/login.html'
+    form = forms.LoginForm()
+    message = ''
+    if request.method == 'POST':
+        form = forms.LoginForm(request.POST)
+        if form.is_valid():
+            user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password'],
+            )
+            if user is not None:
+                login(request, user)
+                return redirect('miapizza:base')
+            else:
+                message = 'Login failed!'
+    context = {'form': form, 'message': message}
+    return render(request, template_name, context)
+
+@login_required
+def IngredientView(request):
+    template_name = 'miapizza/ingredients.html'
+    ingredients = Ingredient.objects.order_by('name')[:]
+    last_history = {}
+    if History.objects.exists():
+        last_history = {
+        'message' : History.objects.last().message,
+        'style' : History.objects.last().style,
+        }
+        History.objects.last().delete()
+    context = {
+        'ingredients_list': ingredients,
+        'last_history': last_history
+    }
+    return render(request, template_name, context)
+
+@login_required
+def PizzaView(request):
     template_name = 'miapizza/pizzas.html'
-    context_object_name = 'pizzas_list'
-    def get_queryset(self):
-        return Pizza.objects.order_by('name')[:]
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        if History.objects.exists():
-            context['last_history'] = {
-            'message' : History.objects.last().message,
-            'style' : History.objects.last().style,
-            }
-            History.objects.last().delete()
-        return context
+    pizzas = Pizza.objects.order_by('name')[:]
+    last_history = {}
+    if History.objects.exists():
+        last_history = {
+        'message' : History.objects.last().message,
+        'style' : History.objects.last().style,
+        }
+        History.objects.last().delete()
+    context = {
+        'pizzas_list': pizzas,
+        'last_history': last_history
+    }
+    return render(request, template_name, context)
 
 def change(ingredient, number, sign):
     ingredient.quentity += abs(int(number)) * sign

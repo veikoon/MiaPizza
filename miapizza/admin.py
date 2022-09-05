@@ -1,7 +1,7 @@
 from import_export.admin import ImportExportModelAdmin
 from django.contrib import admin
 
-from .ingredients import Ingredient, Pizza
+from .models import Ingredient, Pizza
 
 class IngredientAdmin(ImportExportModelAdmin): # used to allow import/export from admin panel.
     pass

@@ -11,43 +11,44 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 {% if ingredients_list %}
     <div style="margin:10px;">
-    <input type="text" class="col-md-4 offset-md-4 searchbox " id="search" autocomplete="off" onkeyup="filterFunction()" placeholder="Rechercher un ingrédient.." autofocus>
+    <input type="text" class="form-control col-md-4 offset-md-4" id="search" autocomplete="off" onkeyup="filterFunction()" placeholder="Rechercher un ingrédient.." autofocus>
     </div>
-
-    <table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th class="text-center">Ingrédient</th>
-            <th class="text-center">Quantité</th>
-            <th class="text-center">Unité</th>
-            <th class="text-center">Ajout/Retrait</th>
-        </tr>
-    </thead>
-    <tbody id="ingredients_list">
-    {% for ingredient in ingredients_list %}
-        <tr id="{{ ingredient.name }}">
-            <td class="text-center">
-                {{ ingredient.name }}
-            </td>
-            <td class="text-center">
-                {{ ingredient.quentity }}
-            </td>
-            <td class="text-center">
-                {{ ingredient.unit }}
-            </td>
-            <td class="d-flex justify-content-center">  
-                <form class="input-group-append text-center" action="{% url 'miapizza:add' %}" method="post" autocomplete="off">
-                    {% csrf_token %}
-                    <input type="hidden" name="id" value="{{ ingredient.id }}"><br>
-                    <input type="number" name="num">
-                    <input type="submit" value="Add" class="btn btn-success ml-2">
-                    <input type="submit" value="Remove" class="btn btn-outline-danger ml-2" formaction="{% url 'miapizza:remove' %}" method="post">
-                </form>
-            </td>
-        </tr>
-    {% endfor %}
-    </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Ingrédient</th>
+                    <th class="text-center">Quantité</th>
+                    <th class="text-center">Unité</th>
+                    <th class="text-center">Ajout/Retrait</th>
+                </tr>
+            </thead>
+            <tbody id="ingredients_list">
+            {% for ingredient in ingredients_list %}
+                <tr id="{{ ingredient.name }}">
+                    <td class="text-center">
+                        {{ ingredient.name }}
+                    </td>
+                    <td class="text-center">
+                        {{ ingredient.quentity }}
+                    </td>
+                    <td class="text-center">
+                        {{ ingredient.unit }}
+                    </td>
+                    <td class="d-flex justify-content-center">  
+                        <form class="input-group-append text-center" action="{% url 'miapizza:add' %}" method="post" autocomplete="off">
+                            {% csrf_token %}
+                            <input type="hidden" name="id" value="{{ ingredient.id }}"><br>
+                            <input type="number" name="num">
+                            <input type="submit" value="Add" class="btn btn-success ml-2">
+                            <input type="submit" value="Remove" class="btn btn-outline-danger ml-2" formaction="{% url 'miapizza:remove' %}" method="post">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% else %}
     <p>Pas d'ingrédients disponible. Base de donnée vide !</p>
 {% endif %}
